@@ -55,17 +55,17 @@ public class DatabaseLooping extends HttpServlet {
 
             // ResultSetMetaData rsmd=rs.getMetaData();
          message+="<div align=\"center\"><table style=\"border:2px solid black\">";
-             message+="<th style=\" background-color:yellow;border:2px solid black\">Firstname</th><th style=\" background-color:yellow;border:2px solid black\">Lastname</th><th style=\" background-color:yellow;border:2px solid black\">Address</th>";
+             message+="<th style=\" background-color:yellow;border:2px solid black\">CustID</th><th style=\" background-color:yellow;border:2px solid black\">Firstname</th><th style=\" background-color:yellow;border:2px solid black\">Lastname</th><th style=\" background-color:yellow;border:2px solid black\">Address</th>";
 
              while(rs.next())
 
                 {
 
-                   message+="<tr style=\"border:2px solid black\"><td style=\" background-color:yellow;border:2px solid black\">"+
-                   "<a href=\"details.jsp\">"+rs.getString("cust_first_name")+"</a>"+
-                		   "</td><td style=\"background-color:yellow;border:2px solid black\">" + 
-                   rs.getString("cust_last_name")+"</td><td style=\"background-color:yellow;border:2px solid black\">" + 
-                   rs.getString("cust_street_address1")+"</td></tr>" ;  
+                   message+="<tr ><td style=\" background-color:yellow;border:2px solid black\">"+
+                   "<a href=\"details?CustID=" +rs.getInt("customer_id")+"\">"+rs.getInt("customer_id")+"</a>"+
+                		   "</td><td style=\" background-color:yellow;border:2px solid black\">"+rs.getString("cust_first_name")+
+                		   "</td><td style=\"background-color:yellow;border:2px solid black\">" +rs.getString("cust_last_name")+
+                		   "</td><td style=\"background-color:yellow;border:2px solid black\">" +rs.getString("cust_street_address1")+"</td></tr>" ;  
 
                   
              }
